@@ -1,4 +1,4 @@
-function Input({ id, name, func,value }) {
+function Input({ id, name, func}) {
   
   return (
     <label>
@@ -8,7 +8,6 @@ function Input({ id, name, func,value }) {
         id={id}
         type="text"
         onChange={func}
-        value= {value[id]}
       ></input>
     </label>
   );
