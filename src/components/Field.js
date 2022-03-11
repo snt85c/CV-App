@@ -24,37 +24,38 @@ export default class BiographInfo extends React.Component {
     });
   };
 
-  renderSwitch = () => {
-    if (this.state.value === true) {
+  createInputElement() {
+    return this.state.elements.map((element, i) => {
       return (
-        <legend>
-          <FieldButton
-            name={"Close " + this.state.name}
-            func={this.handleClick}
-          />
-          <fieldset>
-            <form className="form">
-              {this.state.elements.map((element, i) => {
-                return (
-                  <Input
-                    key={uniqid()}
-                    id={this.props.id[i]}
-                    name={element}
-                    func={this.props.func}
-                  />
-                );
-              })}
-            </form>
-          </fieldset>
-        </legend>
+        <Input
+          key={uniqid()}
+          id={this.props.id[i]}
+          name={element}
+          func={this.props.func}
+        />
       );
-    }
-    return (
-      <FieldButton name={"Open  " + this.state.name} func={this.handleClick} />
-    );
-  };
+    });
+  }
+
 
   render() {
-    return this.renderSwitch();
+    if (this.state.value === true) {
+        return (
+          <legend>
+            <FieldButton
+              name={"Close " + this.state.name}
+              func={this.handleClick}
+            />
+            <fieldset>
+              <form className="form">  
+            {this.createInputElement()}
+              </form>
+            </fieldset>
+          </legend>
+        );
+      }
+      return (
+        <FieldButton name={"Open  " + this.state.name} func={this.handleClick} />
+      );
   }
 }
