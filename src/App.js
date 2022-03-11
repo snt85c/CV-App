@@ -39,6 +39,7 @@ export class App extends React.Component {
           id = {["name","surname","address","phoneNumber"]}
           elements={["Name", "Surname", "Address", "Phone Number"]}
           func={this.handleChange}
+          value = {this.state}
         />
         <Field
           name="Academic Information"

@@ -10,7 +10,7 @@ export default class BiographInfo extends React.Component {
       value: false,
       name: props.name,
       elements: props.elements,
-      id: props.id,
+      //   id: props.id,
     };
   }
 
@@ -24,38 +24,46 @@ export default class BiographInfo extends React.Component {
     });
   };
 
-  createInputElement() {
-    return this.state.elements.map((element, i) => {
-      return (
-        <Input
-          key={uniqid()}
-          id={this.props.id[i]}
-          name={element}
-          func={this.props.func}
-        />
-      );
-    });
-  }
-
+  //   createInputElement() {
+  //     return this.state.elements.map((element, i) => {
+  //         console.log(this.props.value)
+  //       return (
+  //         <Input
+  //           key={uniqid()}
+  //           id={this.props.id[i]}
+  //           name={element}
+  //           func={this.props.func}
+  //           value = {this.props.value}
+  //         />
+  //       );
+  //     });
+  //   }
 
   render() {
+    // const item = this.createInputElement();
     if (this.state.value === true) {
-        return (
-          <legend>
-            <FieldButton
-              name={"Close " + this.state.name}
-              func={this.handleClick}
-            />
-            <fieldset>
-              <form className="form">  
-            {this.createInputElement()}
-              </form>
-            </fieldset>
-          </legend>
-        );
-      }
       return (
-        <FieldButton name={"Open  " + this.state.name} func={this.handleClick} />
+        <div style={{ border: "1px solid gray" }}>
+          <FieldButton
+            name={"Close " + this.state.name}
+            func={this.handleClick}
+          />
+          {this.state.elements.map((element, i) => {
+            return (
+              <Input
+                key={uniqid()}
+                id={this.props.id[i]}
+                name={element}
+                func={this.props.func}
+                value={this.props.value}
+              />
+            );
+          })}
+        </div>
       );
+    }
+    return (
+      <FieldButton name={"Open  " + this.state.name} func={this.handleClick} />
+    );
   }
 }
