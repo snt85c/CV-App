@@ -1,11 +1,11 @@
-function Input({ id, name, func}) {
-  
+function Input({ stateValue, name, data, func}) {
   return (
     <label>
       {name}
       <input
         className="input"
-        id={id}
+        id={stateValue}
+        value = {data[stateValue]}
         type="text"
         onChange={func}
       ></input>

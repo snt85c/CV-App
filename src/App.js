@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import Field from "./components/Field";
-import Submit from "./components/Submit";
+import Section from "./components/Section";
+import Preview from "./components/Preview";
 import "./App.css";
 
 export class App extends React.Component {
@@ -34,25 +34,28 @@ export class App extends React.Component {
     return (
       <>
         <Header />
-        <Field
+        <Section
           name="Biographical Information"
-          id = {["name","surname","address","phoneNumber"]}
+          stateValue = {["name","surname","address","phoneNumber"]}
           elements={["Name", "Surname", "Address", "Phone Number"]}
+          data = {this.state}
           func={this.handleChange}
         />
-        <Field
+        <Section
           name="Academic Information"
-          id = {["degree","info1","info2"]}
+          stateValue = {["degree","info1","info2"]}
           elements={["Degree", "info1", "info2"]}
+          data = {this.state}
           func={this.handleChange}
         />
-        <Field
+        <Section
           name="Professional Experience"
-          id = {["employer","info1","info2"]}
+          stateValue = {["employer","info1","info2"]}
           elements={["Employer", "info3", "info4"]}
+          data = {this.state}
           func={this.handleChange}
         />
-        <Submit className="submit" data={this.state} />
+        <Preview className="submit" data={this.state} />
       </>
     );
   }
