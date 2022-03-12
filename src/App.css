@@ -1,15 +1,120 @@
+
 body {
-  margin: 0% 15%;
+  background-color: rgb(48, 60, 77);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  height: 1000px;
+
 }
+
+.container{
+  margin: 80px 15%;
+  border: none;
+}
+
 .form {
   display: flex;
   flex-direction: column;
 }
 
+.inline {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.mainMenu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  height:45px;
+  background-color: rgb(62, 82, 109);
+  border-radius:  70px;
+  margin: 10px 0px;
+  padding: 0px 5%;
+  box-shadow:  0 0 2px 2px rgba(0,0,0,.1);
+
+}
+
+@media all and (max-width: 700px) {
+  .mobhide {
+    display: none;
+    text-align: center;
+    text-justify: auto;
+  }
+}
+
+
 .logo {
-  width: 50px;
+  color: white;
   height: 50px;
-  margin: 20px;
+  width: 50px;
+  transition: all .2s ease-in-out;
+}
+
+.logo:hover{
+  color:aqua;
+  transform: scale(1.1);
+
+}
+
+.mainMenuIcon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 249, 249);
+  transition: all .2s ease-in-out;
+  width: 70%;
+  height: 70%;
+}
+
+.icon{
+  width: 70%;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.mainMenuIcon:hover{
+  color:rgb(0, 255, 128);
+  transform: scale(1.1);
+}
+
+.downloadButton{
+  background-color: rgb(72, 228, 176);
+  box-shadow:  0 0 2px 2px rgba(0,0,0,.1);
+  border-radius: 70px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+
+}
+
+.overlay{
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  border-radius: 10px;
+  width: 40%; 
+  height: 25%; 
+  top: 12%;
+  left:19%;
+  background-color: rgb(62, 82, 109);
+  box-shadow:  0 0 2px 2px rgba(0,0,0,.1);
+
+  z-index: 2; 
 }
 
 .input {
@@ -17,33 +122,42 @@ body {
 }
 
 label {
+  background-color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
   width: 100%;
-  margin-top: 5px;
 }
 
 .outputLabel {
-  border-bottom: 1px gray solid;
+  /* border-bottom: 1px gray solid; */
   margin-bottom: 2px;
 }
 
-.submit {
+.section, .preview{
+  background-color: white;
+}
+
+/* .preview {
   display: inline-flex;
   width: 100%;
-  margin-top: 40px;
+} */
+
+#preview{
+  background-color: green;
 }
 
-.inline {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .fieldButton {
+  font-size: 14px;
+  font-weight: bold;
   height: 25px;
   padding: 10px;
-  text-justify: distribute-all-lines;
-  background-color: gray;
+  text-align: left;
+  background-color: rgb(62, 82, 109);
+  border-radius: 5px;
+  margin-top: 2px;
 }

@@ -26,8 +26,9 @@ class Preview extends React.Component {
         <FieldButton
           name={this.state.value ? "Close Preview" : "Open Preview"}
           func={this.handleClick}
+          id="preview"
         />
-        <div style={{ display: this.state.value === true ? "block" : "none" }}>
+        <div className = "preview" style={{ display: this.state.value === true ? "block" : "none" }}>
           <Output name="Name" data={this.props.data.name} />
           <Output name="Surname" data={this.props.data.surname} />
           <Output name="Address" data={this.props.data.address} />

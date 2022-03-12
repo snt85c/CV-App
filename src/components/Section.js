@@ -22,12 +22,12 @@ export default class Section extends React.Component {
 
   render() {
     return (
-      <div style={{ border: "1px solid gray" }}>
+      <div>
         <FieldButton
           name={this.state.value? "Close "+ this.props.name : "Open " + this.props.name}
           func={this.handleClick}
         />
-        <div style={{display : this.state.value === true? "block" : "none"}}>
+        <div className = "section" style={{display : this.state.value === true? "block" : "none" }} >
           {this.props.elements.map((element, i) => {
             return (
               <Input

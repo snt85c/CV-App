@@ -34,6 +34,7 @@ export class App extends React.Component {
     return (
       <>
         <Header />
+        <div className="container"><h2>My Resume</h2>
         <Section
           name="Biographical Information"
           stateValue = {["name","surname","address","phoneNumber"]}
@@ -55,7 +56,9 @@ export class App extends React.Component {
           data = {this.state}
           func={this.handleChange}
         />
-        <Preview className="submit" data={this.state} />
+        <br></br>
+        <Preview className="preview" data={this.state} />
+        </div>
       </>
     );
   }

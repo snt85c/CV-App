@@ -1,6 +1,6 @@
-function FieldButton({ name, func }) {
+function FieldButton({ name, func, id }) {
   return (
-    <div className="fieldButton" onClick={func}>
+    <div id={id}className="fieldButton" onClick={func}>
       {name}
     </div>
   );
