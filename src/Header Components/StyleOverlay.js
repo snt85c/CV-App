@@ -1,27 +1,26 @@
 export default function StyleOverlay(props) {
-  let display = "none";
+  let displayValue = "none";
   if (props.id === "Style") {
-    display = "block";
+    displayValue = "block";
   }
   if (props.menu === "none") {
-    display = "none";
+    displayValue = "none";
   }
   return (
     <>
-      <div className="overlay" style={{ display: display, width: "28%" }}>
-        Color
+      <div
+        className="overlay styleOverlayColor"
+        style={{ display: displayValue }}
+      >
+        <div className="overlayTitle">Color</div>
       </div>
       <div
-        className="overlay"
+        className="overlay styleOverlayBackground"
         style={{
-          display: display,
-          width: "15%",
-          backgroundColor: "white",
-          left: "50%",
-          color: "black",
+          display: displayValue,
         }}
       >
-        Background
+        <div className="overlayTitle">Background</div>
       </div>
     </>
   );

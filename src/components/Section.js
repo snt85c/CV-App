@@ -6,7 +6,7 @@ export default class Section extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: false,
+      value: true,
     };
   }
 

@@ -28,11 +28,23 @@ class Preview extends React.Component {
           func={this.handleClick}
           id="preview"
         />
-        <div className = "preview" style={{ display: this.state.value === true ? "block" : "none" }}>
-          <Output name="Name" data={this.props.data.name} />
-          <Output name="Surname" data={this.props.data.surname} />
-          <Output name="Address" data={this.props.data.address} />
-          <Output name="Phone Number" data={this.props.data.phoneNumber} />
+        <div
+          className="preview"
+          style={{
+            fontFamily: this.props.font,
+            display: this.state.value === true ? "flex" : "none",
+          }}
+        >
+          <div className="NameSurnameDivOut">
+            <Output name="Name" data={this.props.data.name} />
+            <div style={{width:"15px"}}></div>
+            <Output name="Surname" data={this.props.data.surname} />
+          </div>
+          <div>
+            <Output name="Address" data={this.props.data.address} />
+            <Output name="Email" data={this.props.data.email} />
+            <Output name="Phone Number" data={this.props.data.phoneNumber} />
+          </div>
         </div>
       </>
     );

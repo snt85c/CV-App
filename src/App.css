@@ -1,17 +1,16 @@
-
 body {
   background-color: rgb(42, 52, 66);
   color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 12px;
   height: 1000px;
-
 }
 
-.container{
+.container {
   margin: 80px 15%;
   border: none;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Ubuntu";
 }
 
 .form {
@@ -28,22 +27,21 @@ body {
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
 }
 
-.mainMenu{
+.mainMenu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   width: 50%;
-  height:45px;
+  height: 45px;
   background-color: rgb(62, 82, 109);
-  border-radius:  70px;
+  border-radius: 70px;
   margin: 10px 0px;
   padding: 0px 5%;
-  box-shadow:  0 0 2px 2px rgba(0,0,0,.1);
-
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 @media all and (max-width: 700px) {
@@ -54,34 +52,32 @@ body {
   }
 }
 
-
 .logo {
   color: white;
   height: 50px;
   width: 50px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.logo:hover{
-  color:aqua;
+.logo:hover {
+  color: aqua;
   transform: scale(1.1);
-  cursor: pointer
+  cursor: pointer;
 }
 
-.mainMenuIcon{
+.mainMenuIcon {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: rgb(255, 249, 249);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   width: 70%;
   height: 70%;
-  cursor: pointer
-
+  cursor: pointer;
 }
 
-.icon{
+.icon {
   width: 70%;
   height: 70%;
   justify-content: center;
@@ -91,36 +87,38 @@ body {
   flex-shrink: 0;
 }
 
-.mainMenuIcon:hover{
-  color:rgb(0, 255, 128);
+.mainMenuIcon:hover {
+  color: rgb(0, 255, 128);
   transform: scale(1.1);
 }
 
-.downloadButton{
+.downloadButton {
   background-color: rgb(72, 228, 176);
-  box-shadow:  0 0 2px 2px rgba(0,0,0,.1);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 70px;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
-
 }
 
-.overlay{
+.downloadButton:hover {
+  color: white;
+  /* transition: all .2s ease-in-out; */
+}
+
+.overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  /* flex-direction: column; */
-  font-weight: bold;
+  /* font-weight: bold; */
   padding: 1%;
   border-radius: 10px;
-  width: 40%; 
-  height: 25%; 
+  width: 40%;
+  height: 25%;
   top: 12%;
-  left:19%;
+  left: 19%;
   background-color: rgb(62, 82, 109);
-  box-shadow:  0 0 2px 2px rgba(0,0,0,.1);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
 
-  z-index: 2; 
+  z-index: 2;
 }
 
 .input {
@@ -137,36 +135,85 @@ label {
   width: 100%;
 }
 
-.outputLabel {
-  /* border-bottom: 1px gray solid; */
-  margin-bottom: 2px;
-}
 
-.section, .preview{
+
+.preview {
   background-color: white;
+  padding: 5px 15px 15px 15px;  
+  justify-content: space-between;
 }
 
-/* .preview {
-  display: inline-flex;
-  width: 100%;
-} */
-
-#preview{
-  background-color: green;
+#preview {
+  background-color: rgb(38, 112, 38);
 }
-.clickableText{
+.clickableText {
   cursor: pointer;
 }
 
 .fieldButton {
+  display: flex;
   font-size: 14px;
   font-weight: bold;
   height: 25px;
   padding: 10px;
-  text-align: left;
+  justify-content: left;
+  align-items: center;
   background-color: rgb(62, 82, 109);
-  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overlayTitle{
+  font-size: large;
+  font-weight: bold;
+}
+
+.fontOverlay{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.layoutOverlay{
+  width: 60%;
+  height: 60%;
+}
+
+.styleOverlayColor{
+  width: 28%;
+}
+
+.styleOverlayBackground {
+  width: 15%;
+  background-color: white;
+  left: 50%;
+  color: black;
+}
+
+.outputLabel {
   margin-top: 2px;
-  cursor: pointer
+  margin-bottom: 2px;
+  font-size: 15px;
+  color: gray;
+  background-color: transparent;
+}
+
+.NameSurnameDivOut{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NameOutputLabel, .SurnameOutputLabel{
+  color: black;
+  font-size: 40px;
+  background-color: none;
+}
+
+.AddressOutputLabel, .Phone.NumberOutputLabel, .EmailOutputLabel{
+  color: black;
+  background-color: none;
+  font-size: 20px;
+
 
 }

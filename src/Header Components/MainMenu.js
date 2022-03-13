@@ -73,7 +73,11 @@ export default class MainMenu extends React.Component {
             );
           })}
         </div>
-          <Overlay font={this.props.font}menu={this.state.menu} id = {this.state.id} style={{display: this.state.menu}}/>
+          <Overlay 
+          font={this.props.font}
+          menu={this.state.menu} 
+          id = {this.state.id} 
+          style={{displayValue: this.state.menu}}/>
       </>
     );
   }

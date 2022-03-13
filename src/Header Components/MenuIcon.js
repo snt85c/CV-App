@@ -1,4 +1,8 @@
 export default function MenuIcon(props) {
+  let classes = "icon"
+  if(props.id === "Download"){
+    classes ="icon downloadButton"
+  }
   return (
       <div
         id={props.id}
@@ -6,7 +10,7 @@ export default function MenuIcon(props) {
         onClick={props.onClick}
         onMouseEnter={props.onHover}
       >
-        <props.import className="icon" />
+        <props.import className={classes} />
         <div className="mobhide">{props.id}</div>
       </div>
   );

@@ -12,21 +12,22 @@ export class App extends React.Component {
       surname: "",
       phoneNumber: "",
       address: "",
+      email: "",
       degree: "",
       info1: "",
       info2: "",
       info3: "",
       info4: "",
-      font: "'Courier New', Courier, monospace",
+      font: "'Ubuntu",
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.updateFont = this.updateFont.bind(this);
   }
 
-  updateFont = (change) => {
+  updateFont = (newFont) => {
     this.setState(
-      {font : change}
+      {font : newFont}
     )
   };
 
@@ -41,12 +42,12 @@ export class App extends React.Component {
     return (
       <>
         <Header font={this.updateFont} />
-        <div className="container" style={{ fontFamily: this.state.font }}>
+        <div className="container" >
           <h2>My Resume</h2>
           <Section
             name="Biographical Information"
-            stateValue={["name", "surname", "address", "phoneNumber"]}
-            elements={["Name", "Surname", "Address", "Phone Number"]}
+            stateValue={["name", "surname", "address", "phoneNumber","email"]}
+            elements={["Name", "Surname", "Address", "Phone Number","E-Mail"]}
             data={this.state}
             func={this.handleChange}
           />
@@ -65,7 +66,7 @@ export class App extends React.Component {
             func={this.handleChange}
           />
           <br></br>
-          <Preview className="preview" data={this.state} />
+          <Preview className="preview" data={this.state} font={this.state.font} />
         </div>
       </>
     );

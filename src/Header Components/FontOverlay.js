@@ -1,29 +1,38 @@
 export default function FontOverlay(props) {
-    let display = "none"
+  let displayValue = "none";
 
   if (props.id === "Font") {
-      display = "block" 
+    displayValue = "flex";
   }
-  if(props.menu === "none"){
-      display = "none"
+  if (props.menu === "none") {
+    displayValue = "none";
   }
- 
-    return (
-      <>
-        <div
-          className="overlay"
-          style={{ display: display, width: "15%"}}
-        >
-          {props.id}
-          <div>
-          <div className="clickableText" onClick={()=>props.font("-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif")}>Ubuntu</div>
-            <div className="clickableText"onClick={()=>props.font("'Courier New', Courier, monospace")}>Courier</div>
-            <div className="clickableText"onClick={()=>props.font("'Times New Roman', Times, serif")}>Times New Roman</div>
-          </div>
-          <div>Size</div>
-        </div>
-      </>
-    );
-  } 
-  
 
+  return (
+    <>
+      <div className="overlay fontOverlay" style={{ display: displayValue }}>
+        <div className="overlayTitle">
+        {props.id}
+        </div>
+        <div>
+          <div className="clickableText" onClick={() => props.font("Ubuntu")}>
+            Ubuntu
+          </div>
+          <div
+            className="clickableText"
+            onClick={() => props.font("'Courier New', Courier, monospace")}
+          >
+            Courier
+          </div>
+          <div
+            className="clickableText"
+            onClick={() => props.font("'Times New Roman', Times, serif")}
+          >
+            Times New Roman
+          </div>
+        </div>
+        <div>Size</div>
+      </div>
+    </>
+  );
+}

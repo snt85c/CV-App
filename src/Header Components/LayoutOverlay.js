@@ -1,18 +1,20 @@
 export default function LayoutOverlay(props){
-    let display = "none"
+    let displayValue = "none"
     if (props.id === "Layout") {
-        display = "block" 
+      displayValue = "block" 
     }
     if(props.menu === "none"){
-        display = "none"
+      displayValue = "none"
     }
     return (
         <>
         <div
-          className="overlay"
-          style={{ display: display, width: "60%", height: "60%"}}
+          className="overlay layoutOverlay"
+          style={{ display: displayValue}}
         >
-          {props.id}
+          <div className="overlayTitle">
+        {props.id}
+        </div>
         </div>
       </>
     )
