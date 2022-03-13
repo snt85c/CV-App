@@ -106,6 +106,7 @@ body {
 .overlay{
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
+  /* flex-direction: column; */
   border-radius: 10px;
   width: 40%; 
   height: 25%; 

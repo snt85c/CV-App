@@ -1,4 +1,5 @@
 import MenuIcon from "./MenuIcon";
+import Overlay from "./Overlay";
 import { FiSettings } from "react-icons/fi";
 import { FiArrowLeftCircle } from "react-icons/fi";
 import { FiArrowRightCircle } from "react-icons/fi";
@@ -12,18 +13,30 @@ export default class MainMenu extends React.Component {
   constructor() {
     super();
     this.state = {
-      fontMenu: "none",
+      menu: "none",
+      id: "",
     };
+    this.onClick = this.onClick.bind(this);
+    this.onHover = this.onHover.bind(this);
   }
 
-  fontOnClick = (e) => {
-    console.log(e.target.id);
+  onClick = (e) => {
+    let target = e.currentTarget.id;
     this.setState(() => {
-      if (this.state.fontMenu === "none") {
-        return { fontMenu: "block" };
+      if (this.state.menu === "none") {
+        return { menu: "block", id: target };
       }
-      return { fontMenu: "none" };
+      return { menu: "none" };
     });
+  };
+
+  onHover = (e) => {
+    let target = e.currentTarget.id;
+    if (this.state.menu === "block") {
+      this.setState(() => {
+        return {id : target};
+      });
+    }
   };
 
   render() {
@@ -54,17 +67,13 @@ export default class MainMenu extends React.Component {
                 key={i}
                 import={imports[i]}
                 id={icon}
-                onClick={this.fontOnClick}
+                onClick={(e) => this.onClick(e)}
+                onHover={(e) => this.onHover(e)}
               />
             );
           })}
         </div>
-        <div>
-          <div
-            className="overlay"
-            style={{ display: this.state.fontMenu }}
-          ></div>
-        </div>
+          <Overlay menu={this.state.menu} id = {this.state.id}/>
       </>
     );
   }
