@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./Header Components/Header";
 import Section from "./components/Section";
 import Preview from "./components/Preview";
 import "./App.css";
@@ -17,10 +17,18 @@ export class App extends React.Component {
       info2: "",
       info3: "",
       info4: "",
+      font: "'Courier New', Courier, monospace",
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.updateFont = this.updateFont.bind(this);
   }
+
+  updateFont = (change) => {
+    this.setState(
+      {font : change}
+    )
+  };
 
   handleChange = (e) => {
     e.preventDefault();
@@ -29,35 +37,35 @@ export class App extends React.Component {
     });
   };
 
-
   render() {
     return (
       <>
-        <Header />
-        <div className="container"><h2>My Resume</h2>
-        <Section
-          name="Biographical Information"
-          stateValue = {["name","surname","address","phoneNumber"]}
-          elements={["Name", "Surname", "Address", "Phone Number"]}
-          data = {this.state}
-          func={this.handleChange}
-        />
-        <Section
-          name="Academic Information"
-          stateValue = {["degree","info1","info2"]}
-          elements={["Degree", "info1", "info2"]}
-          data = {this.state}
-          func={this.handleChange}
-        />
-        <Section
-          name="Professional Experience"
-          stateValue = {["employer","info1","info2"]}
-          elements={["Employer", "info3", "info4"]}
-          data = {this.state}
-          func={this.handleChange}
-        />
-        <br></br>
-        <Preview className="preview" data={this.state} />
+        <Header font={this.updateFont} />
+        <div className="container" style={{ fontFamily: this.state.font }}>
+          <h2>My Resume</h2>
+          <Section
+            name="Biographical Information"
+            stateValue={["name", "surname", "address", "phoneNumber"]}
+            elements={["Name", "Surname", "Address", "Phone Number"]}
+            data={this.state}
+            func={this.handleChange}
+          />
+          <Section
+            name="Academic Information"
+            stateValue={["degree", "info1", "info2"]}
+            elements={["Degree", "info1", "info2"]}
+            data={this.state}
+            func={this.handleChange}
+          />
+          <Section
+            name="Professional Experience"
+            stateValue={["employer", "info1", "info2"]}
+            elements={["Employer", "info3", "info4"]}
+            data={this.state}
+            func={this.handleChange}
+          />
+          <br></br>
+          <Preview className="preview" data={this.state} />
         </div>
       </>
     );

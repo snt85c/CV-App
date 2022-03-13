@@ -1,13 +1,13 @@
-import  MainMenu  from "./Header Components/MainMenu";
+import  MainMenu  from "./MainMenu";
 import { FiGithub } from "react-icons/fi";
 import { AiOutlineMenu } from "react-icons/ai";
 
 
-function Header() {
+function Header({font}) {
   return (
     <div className="inline sticky">
       <FiGithub className="logo"/>
-      <MainMenu />
+      <MainMenu font={font}/>
       <AiOutlineMenu className="logo"/>
     </div>
   );
