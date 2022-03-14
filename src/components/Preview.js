@@ -21,6 +21,7 @@ class Preview extends React.Component {
   };
 
   render() {
+    console.log(this.props.size);
     return (
       <>
         <FieldButton
@@ -35,15 +36,76 @@ class Preview extends React.Component {
             display: this.state.value === true ? "flex" : "none",
           }}
         >
-          <div className="NameSurnameDivOut">
-            <Output name="Name" data={this.props.data.name} />
-            <div style={{width:"15px"}}></div>
-            <Output name="Surname" data={this.props.data.surname} />
-          </div>
           <div>
-            <Output name="Address" data={this.props.data.address} />
-            <Output name="Email" data={this.props.data.email} />
-            <Output name="Phone Number" data={this.props.data.phoneNumber} />
+            <div className="anagraphPreview">
+              <div
+                className="NameSurnameDivOut"
+                style={{ fontSize: this.props.size }}
+              >
+                <Output
+                  name="Name"
+                  data={this.props.data.name}
+                  size={this.props.size}
+                />
+                <div style={{ width: "15px" }}></div>
+                <Output
+                  name="Surname"
+                  data={this.props.data.surname}
+                  size={this.props.size}
+                />
+              </div>
+              <div>
+                <Output
+                  name="Address"
+                  data={this.props.data.address}
+                  size={this.props.size -1.5}
+                />
+                <Output
+                  name="Email"
+                  data={this.props.data.email}
+                  size={this.props.size -1.5}
+                />{" "}
+                <Output
+                  name="Phone Number"
+                  data={this.props.data.phoneNumber}
+                  size={this.props.size -1.5}
+                />
+              </div>
+            </div>
+            <div className="outputsContainer">
+              <Output
+                name="University"
+                data={this.props.data.degree}
+                size={this.props.size -1.5}
+              />
+              <Output
+                name="Faculty"
+                data={this.props.data.info1}
+                size={this.props.size -1.5}
+              />
+              <Output
+                name="Description"
+                data={this.props.data.info2}
+                size={this.props.size -1.5}
+              />
+            </div>
+            <div className="outputsContainer">
+              <Output
+                name="Employer"
+                data={this.props.data.employer}
+                size={this.props.size -1.5}
+              />
+              <Output
+                name="Role"
+                data={this.props.data.info3}
+                size={this.props.size -1.5}
+              />
+              <Output
+                name="Description"
+                data={this.props.data.info4}
+                size={this.props.size -1.5}
+              />
+            </div>
           </div>
         </div>
       </>

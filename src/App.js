@@ -19,10 +19,18 @@ export class App extends React.Component {
       info3: "",
       info4: "",
       font: "'Ubuntu",
+      fontSize:"3.5vw"
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.updateFont = this.updateFont.bind(this);
+    this.updateFontSize = this.updateFontSize.bind(this);
+  }
+
+  updateFontSize = (newSize) =>{
+    this.setState(
+      {fontSize: newSize}
+    )
   }
 
   updateFont = (newFont) => {
@@ -41,32 +49,34 @@ export class App extends React.Component {
   render() {
     return (
       <>
-        <Header font={this.updateFont} />
+        <Header font={this.updateFont} size={this.updateFontSize}/>
         <div className="container" >
           <h2>My Resume</h2>
+          <div style={{display:"flex", flexDirection:"row", backgroundColor:"white"}}> 
           <Section
-            name="Biographical Information"
+            name="Bio"
             stateValue={["name", "surname", "address", "phoneNumber","email"]}
             elements={["Name", "Surname", "Address", "Phone Number","E-Mail"]}
             data={this.state}
             func={this.handleChange}
           />
           <Section
-            name="Academic Information"
+            name="Education"
             stateValue={["degree", "info1", "info2"]}
             elements={["Degree", "info1", "info2"]}
             data={this.state}
             func={this.handleChange}
           />
+          </div>
           <Section
-            name="Professional Experience"
-            stateValue={["employer", "info1", "info2"]}
+            name="Work Experience"
+            stateValue={["employer", "info3", "info4"]}
             elements={["Employer", "info3", "info4"]}
             data={this.state}
             func={this.handleChange}
           />
           <br></br>
-          <Preview className="preview" data={this.state} font={this.state.font} />
+          <Preview className="preview" data={this.state} font={this.state.font} size={this.state.fontSize}  />
         </div>
       </>
     );

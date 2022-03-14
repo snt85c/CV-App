@@ -75,6 +75,7 @@ export default class MainMenu extends React.Component {
         </div>
           <Overlay 
           font={this.props.font}
+          size={this.props.size}
           menu={this.state.menu} 
           id = {this.state.id} 
           style={{displayValue: this.state.menu}}/>

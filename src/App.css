@@ -8,9 +8,14 @@ body {
 }
 
 .container {
-  margin: 80px 15%;
+  margin: 80px 20%;
   border: none;
   font-family: "Ubuntu";
+}
+
+.section {
+  padding: 10px;
+  background-color: white;
 }
 
 .form {
@@ -123,6 +128,8 @@ body {
 
 .input {
   width: 98%;
+  border: none;
+  border-bottom: 1px solid rgb(170, 169, 169);
 }
 
 label {
@@ -135,51 +142,65 @@ label {
   width: 100%;
 }
 
-
-
 .preview {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  padding: 5px 15px 15px 15px;  
+  padding: 5px 15px 15px 15px;
+  justify-content: space-between;
+}
+
+.anagraphPreview {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
 #preview {
-  background-color: rgb(38, 112, 38);
+  background-color: rgb(62, 82, 109);
+
 }
 .clickableText {
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.clickableText:hover{
+  color: rgb(0, 255, 128);
+  transform: scale(1.05 ); 
 }
 
 .fieldButton {
   display: flex;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 2vw;
+  font-weight: 700;
   height: 25px;
   padding: 10px;
   justify-content: left;
   align-items: center;
-  background-color: rgb(62, 82, 109);
+  background-color: white;
+  color: black;
   cursor: pointer;
 }
 
-.overlayTitle{
+.overlayTitle {
   font-size: large;
   font-weight: bold;
 }
 
-.fontOverlay{
+.fontOverlay {
   width: 15%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.layoutOverlay{
+.layoutOverlay {
   width: 60%;
   height: 60%;
 }
 
-.styleOverlayColor{
+.styleOverlayColor {
   width: 28%;
 }
 
@@ -191,29 +212,39 @@ label {
 }
 
 .outputLabel {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  font-size: 15px;
+  font-size: 1.9vw;
   color: gray;
   background-color: transparent;
 }
 
-.NameSurnameDivOut{
+.NameSurnameDivOut {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.NameOutputLabel, .SurnameOutputLabel{
+.outputsContainer{
+  margin-bottom: 20px;
+}
+
+.NameOutputLabel,
+.SurnameOutputLabel {
   color: black;
-  font-size: 40px;
   background-color: none;
 }
 
-.AddressOutputLabel, .Phone.NumberOutputLabel, .EmailOutputLabel{
+.AddressOutputLabel,
+.Phone.NumberOutputLabel,
+.EmailOutputLabel,
+.UniversityOutputLabel,
+.FacultyOutputLabel,
+.DescriptionOutputLabel,
+.EmployerOutputLabel,
+.RoleOutputLabel,
+.DescriptionOutputLabel {
+  display: inline;
   color: black;
   background-color: none;
-  font-size: 20px;
-
-
+  font-size: 1.6vw;
+  overflow-wrap: break-word;
 }

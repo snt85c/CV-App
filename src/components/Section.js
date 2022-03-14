@@ -22,9 +22,9 @@ export default class Section extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{display:"inline", width:"100%", height:"100%"}}>
         <FieldButton
-          name={this.state.value? "Close "+ this.props.name : "Open " + this.props.name}
+          name={this.props.name.toUpperCase()}
           func={this.handleClick}
         />
         <div className = "section" style={{display : this.state.value === true? "block" : "none" }} >

@@ -3,11 +3,11 @@ import { FiGithub } from "react-icons/fi";
 import { AiOutlineMenu } from "react-icons/ai";
 
 
-function Header({font}) {
+function Header(props) {
   return (
     <div className="inline sticky">
       <FiGithub className="logo"/>
-      <MainMenu font={font}/>
+      <MainMenu font={props.font} size={props.size}/>
       <AiOutlineMenu className="logo"/>
     </div>
   );

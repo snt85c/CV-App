@@ -11,9 +11,7 @@ export default function FontOverlay(props) {
   return (
     <>
       <div className="overlay fontOverlay" style={{ display: displayValue }}>
-        <div className="overlayTitle">
-        {props.id}
-        </div>
+        <div className="overlayTitle">{props.id}</div>
         <div>
           <div className="clickableText" onClick={() => props.font("Ubuntu")}>
             Ubuntu
@@ -32,6 +30,11 @@ export default function FontOverlay(props) {
           </div>
         </div>
         <div>Size</div>
+        <div style={{ display: "flex", justifyContent:"space-evenly" }}>
+          <div className="clickableText" onClick={()=>props.size("3")}>S</div>
+          <div className="clickableText"onClick={()=>props.size("3.5")}>M</div>
+          <div className="clickableText"onClick={()=>props.size("3.9")}>L</div>
+        </div>
       </div>
     </>
   );
