@@ -18,7 +18,8 @@ export class App extends React.Component {
       info2: "",
       info3: "",
       info4: "",
-      font: "'Ubuntu",
+      font: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
       fontSize:"3.5vw"
     };
 

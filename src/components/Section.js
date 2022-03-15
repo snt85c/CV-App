@@ -32,8 +32,8 @@ export default class Section extends React.Component {
             return (
               <Input
                 key={i}
-                stateValue={this.props.stateValue[i]}
                 name={element}
+                stateValue={this.props.stateValue[i]}
                 data={this.props.data}
                 func={this.props.func}
               />

@@ -21,7 +21,6 @@ class Preview extends React.Component {
   };
 
   render() {
-    console.log(this.props.size);
     return (
       <>
         <FieldButton
