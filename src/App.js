@@ -8,16 +8,18 @@ export class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      surname: "",
-      phoneNumber: "",
-      address: "",
-      email: "",
-      degree: "",
-      info1: "",
-      info2: "",
-      info3: "",
-      info4: "",
+      userdata:{
+        name: "",
+        surname: "",
+        phoneNumber: "",
+        address: "",
+        email: "",
+        degree: "",
+        info1: "",
+        info2: "",
+        info3: "",
+        info4: "",
+      },
       font: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
       fontSize:"3.5vw"
@@ -41,9 +43,8 @@ export class App extends React.Component {
   };
 
   handleChange = (e) => {
-    e.preventDefault();
     this.setState({
-      [e.target.id]: e.target.value,
+      userdata:{[e.target.id]: e.target.value},
     });
   };
 
@@ -58,14 +59,14 @@ export class App extends React.Component {
             name="Bio"
             stateValue={["name", "surname", "address", "phoneNumber","email"]}
             elements={["Name", "Surname", "Address", "Phone Number","E-Mail"]}
-            data={this.state}
+            data={this.state.userdata}
             func={this.handleChange}
           />
           <Section
             name="Education"
             stateValue={["degree", "info1", "info2"]}
             elements={["Degree", "info1", "info2"]}
-            data={this.state}
+            data={this.state.userdata}
             func={this.handleChange}
           />
           </div>
@@ -73,11 +74,11 @@ export class App extends React.Component {
             name="Work Experience"
             stateValue={["employer", "info3", "info4"]}
             elements={["Employer", "info3", "info4"]}
-            data={this.state}
+            data={this.state.userdata}
             func={this.handleChange}
           />
           <br></br>
-          <Preview className="preview" data={this.state} font={this.state.font} size={this.state.fontSize}  />
+          <Preview className="preview" data={this.state.userdata} font={this.state.font} size={this.state.fontSize}  />
         </div>
       </>
     );
