@@ -20,9 +20,11 @@ export class App extends React.Component {
         info3: "",
         info4: "",
       },
-      font: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
-      fontSize:"3.5vw"
+      fontdata:{
+        font: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
+        fontSize:"3.5vw"
+      }
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -31,20 +33,23 @@ export class App extends React.Component {
   }
 
   updateFontSize = (newSize) =>{
-    this.setState(
-      {fontSize: newSize}
-    )
+    this.setState({
+      fontdata:{fontSize: newSize}
+    })
   }
 
   updateFont = (newFont) => {
     this.setState(
-      {font : newFont}
+      {fontdata:{font : newFont}}
     )
   };
 
   handleChange = (e) => {
     this.setState({
-      userdata:{[e.target.id]: e.target.value},
+      userdata:{
+        ...this.state.userdata,
+        [e.target.id]: e.target.value
+      },
     });
   };
 
@@ -78,7 +83,7 @@ export class App extends React.Component {
             func={this.handleChange}
           />
           <br></br>
-          <Preview className="preview" data={this.state.userdata} font={this.state.font} size={this.state.fontSize}  />
+          <Preview className="preview" data={this.state.userdata} font={this.state.fontdata.font} size={this.state.fontdata.fontSize}  />
         </div>
       </>
     );
