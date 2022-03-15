@@ -44,7 +44,6 @@ export default function App() {
         <h2>My Resume</h2>
         <Sections userdata={userdata} func={handleChange} />
         <Preview
-          className="preview"
           data={userdata}
           font={fontdata.fontFamily}
           size={fontdata.fontSize}
