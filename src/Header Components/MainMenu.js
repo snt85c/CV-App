@@ -7,39 +7,27 @@ import { AiOutlineFontColors } from "react-icons/ai";
 import { BsBrush } from "react-icons/bs";
 import { AiOutlineLayout } from "react-icons/ai";
 import { GoCloudDownload } from "react-icons/go";
-import React from "react";
+import { useState } from "react";
 
-export default class MainMenu extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      menu: "none",
-      id: "",
-    };
-    this.onClick = this.onClick.bind(this);
-    this.onHover = this.onHover.bind(this);
-  }
+export default function MainMenu(props) {
 
-  onClick = (e) => {
+  const [value, setValue] = useState({menu:"none", id:""})
+
+  function onClick(e){
     let target = e.currentTarget.id;
-    this.setState(() => {
-      if (this.state.menu === "none") {
-        return { menu: "block", id: target };
-      }
-      return { menu: "none" };
-    });
+    if(value.menu === "none"){
+      return setValue({menu:"block", id:target})
+    }
+    return setValue({menu:"none"})
   };
 
-  onHover = (e) => {
+  function onHover(e){
     let target = e.currentTarget.id;
-    if (this.state.menu === "block") {
-      this.setState(() => {
-        return {id : target};
-      });
+    if(value.menu === "block"){
+      setValue({...value,id:target})
     }
   };
 
-  render() {
     const imports = [
       AiOutlineFontColors,
       BsBrush,
@@ -67,19 +55,18 @@ export default class MainMenu extends React.Component {
                 key={i}
                 import={imports[i]}
                 id={icon}
-                onClick={(e) => this.onClick(e)}
-                onHover={(e) => this.onHover(e)}
+                onClick={(e) => onClick(e)}
+                onHover={(e) => onHover(e)}
               />
             );
           })}
         </div>
           <Overlay 
-          font={this.props.font}
-          size={this.props.size}
-          menu={this.state.menu} 
-          id = {this.state.id} 
-          style={{displayValue: this.state.menu}}/>
+          font={props.font}
+          size={props.size}
+          menu={value.menu} 
+          id = {value.id} 
+          style={{displayValue: value.menu}}/>
       </>
     );
-  }
 }
